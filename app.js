@@ -98,7 +98,7 @@ app.get("/search", (req, res) => {
       queryKeywords.push(num);
       let numStr = converter.toWords(Number(num));
       let numKeys = numStr.split("-");
-      queryKeywords.push(numStr);
+      queryKeywords.push(numStr); // two-hundered-thirty-four
 
       numKeys.forEach((key) => {
         let spaceSplits = key.split(" ");
@@ -110,6 +110,11 @@ app.get("/search", (req, res) => {
       });
     });
   }
+
+  // twoSum => two sum
+
+  // twojnjgk
+  // 2
 
   for (let j = 0; j < newString.length; j++) {
     // Original Keywords
@@ -135,7 +140,7 @@ app.get("/search", (req, res) => {
   let queryKeywordsNew = queryKeywords;
   queryKeywords.forEach((key) => {
     let key1 = key;
-    let key2 = lemmatizer.verb(key1);
+    let key2 = lemmatizer.verb(key1); // adds -> add
     queryKeywordsNew.push(key2);
 
     let spellkey1 = spellcheck.getCorrections(key1);
@@ -315,3 +320,22 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log("Server is runnning on port " + port);
 });
+
+// Binary Search Tree -> ['binary', 'search', 'tree', 'orange'] -> ['binary', 'search', 'tree']
+// Keywords -> []
+// const score = [];
+// for(const document of documents) {
+// bm25
+// score.push({id: document_id, score: bm25})
+// }
+
+// O(N*W)
+// score.sort((a, b) => {
+//  return b.score-a.score;
+// })
+
+// for(let i=0; i< 10; i++){
+// console.log(document[score[i]._id]);
+//}
+//
+//
